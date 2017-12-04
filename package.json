@@ -18,7 +18,8 @@
   "homepage": "https://github.com/merveer/take-a-note#readme",
   "dependencies": {
     "eslint": "^4.12.1",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "nodemon": "^1.12.1"
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
