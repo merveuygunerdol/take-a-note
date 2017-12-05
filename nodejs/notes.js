@@ -14,11 +14,16 @@ let addNote = (title, body) => {
     allNotes = JSON.parse(notesString);
   } catch(e) {
 
-  }
+  } // try => loads the file
 
-  allNotes.push(note); // first writefilesync
-  fs.writeFileSync('notes-data.json', JSON.stringify(allNotes));
-};
+  let duplicateNotes = allNotes.filter((note) => note.title === title);
+
+  if (duplicateNotes.length === 0) {
+    allNotes.push(note); // first writefilesync
+    fs.writeFileSync('notes-data.json', JSON.stringify(allNotes));
+  }
+}; // => saves the file
+
 const getAll = () => {
   console.log('Listing all notes');
 };
