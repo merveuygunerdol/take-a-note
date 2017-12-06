@@ -36,7 +36,10 @@ const getAll = () => {
 };
 
 const removeNote = (title) => {
-  console.log('Removing the note: Title:', title);
+  let allNotes = fetchNotes();
+  let filteredNotes = allNotes.filter((note) => note.title !== title);
+saveNotes(filteredNotes);
+return allNotes.length !== filteredNotes.length;
 };
 
 const readNote = (title, body) => {
