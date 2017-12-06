@@ -13,6 +13,11 @@ console.log('Yargs;', argv);
 
 if (command === 'add') {
   let note = notes.addNote(argv.title, argv.body);
+  if (note) {
+    console.log(`Note Created -- Title: ${note.title} -- Body: ${note.body}`);
+  } else {
+    console.log('Please Change The Title-Duplicate Title')
+  }
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'remove') {
