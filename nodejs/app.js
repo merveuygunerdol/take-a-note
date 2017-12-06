@@ -12,7 +12,7 @@ console.log('Command;', command);
 console.log('Yargs;', argv);
 
 if (command === 'add') {
-  notes.addNote(argv.title, argv.body);
+  let note = notes.addNote(argv.title, argv.body);
 } else if (command === 'list') {
   notes.getAll();
 } else if (command === 'remove') {
