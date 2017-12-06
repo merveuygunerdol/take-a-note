@@ -48,9 +48,14 @@ const readNote = (title, body) => {
   return filteredNotes[0]
 };
 
+let logNote = (note) => {
+  console.log(`Title: ${note.title} -- Body: ${note.body}`)
+}
+
 module.exports = {
   addNote,
   getAll,
   removeNote,
   readNote,
+  logNote,
 };

@@ -14,7 +14,8 @@ console.log('Yargs;', argv);
 if (command === 'add') {
   let note = notes.addNote(argv.title, argv.body);
   if (note) {
-    console.log(`Note Created -- Title: ${note.title} -- Body: ${note.body}`);
+    console.log('Note created --');
+    notes.logNote(note);
   } else {
     console.log('Please Change The Title-Duplicate Title')
   }
@@ -27,7 +28,8 @@ if (command === 'add') {
 } else if (command === 'read') {
   let note = notes.readNote(argv.title, argv.body);
   if (note) {
-    console.log(`Note Found -- Title: ${note.title} -- Body: ${note.body}`);
+    console.log('Note found --');
+    notes.logNote(note);
   } else {
     console.log('Note not found')
   }
