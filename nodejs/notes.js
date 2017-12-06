@@ -43,7 +43,9 @@ return allNotes.length !== filteredNotes.length;
 };
 
 const readNote = (title, body) => {
-  console.log('Reading the note: Title:', title, 'Body:', body);
+  let allNotes = fetchNotes();
+  let filteredNotes = allNotes.filter((note) => note.title === title && note.body === body);
+  return filteredNotes[0]
 };
 
 module.exports = {
