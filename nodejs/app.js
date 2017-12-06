@@ -20,7 +20,9 @@ if (command === 'add') {
     console.log('Please Change The Title-Duplicate Title')
   }
 } else if (command === 'list') {
-  notes.getAll();
+  let allNotes = notes.getAll();
+  console.log(`Printing ${allNotes.length} note(s)`);
+  allNotes.forEach((note) => notes.logNote(note));
 } else if (command === 'remove') {
   let noteRemoved = notes.removeNote(argv.title);
   let message = noteRemoved ? 'Note was removed' : 'Note not found';

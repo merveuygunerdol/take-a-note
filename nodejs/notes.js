@@ -32,7 +32,7 @@ let addNote = (title, body) => {
 }; // => saves the file
 
 const getAll = () => {
-  console.log('Listing all notes');
+  return fetchNotes();
 };
 
 const removeNote = (title) => {
