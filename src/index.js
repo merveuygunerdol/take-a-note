@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 bodyParser = require('body-parser')
+const notes = require('./notes');
+
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
@@ -9,7 +11,7 @@ app.get('/', function (req, res) {
   app.get('/add_note', function(req, res) {
     const body = req.query['body'];
     const title = req.query['title'];
-
+    let note = notes.addNote(title, body);
     res.send('NOTE SAVED!');
 });
 
